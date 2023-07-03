@@ -7,17 +7,34 @@ import {FaceSnap} from "./models/face-snap.models";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  mySnap!: FaceSnap;
-  myOtherSnap!: FaceSnap;
-  myLastSnap!: FaceSnap;
+  faceSnaps!: FaceSnap[];
 
-  ngOnInit() {
-    this.mySnap = new FaceSnap(
-      'Angular',
-      'Angular is a platform for building mobile and desktop web applications.',
-      'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
-      new Date(),
-      0
-    );
+  ngOnInit()
+  {
+    this.faceSnaps = [
+      {
+        title: 'My First Snap',
+        description: 'This is my first snap',
+        imageUrl: 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg',
+        createDate: new Date(),
+        snaps: 140,
+        location: 'New York'
+      },
+      {
+        title: 'Three Rock Mountain',
+        description: 'Un endroit magnifique pour les randonnées.',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Three_Rock_Mountain_Southern_Tor.jpg/2880px-Three_Rock_Mountain_Southern_Tor.jpg',
+        createDate: new Date(),
+        snaps: 6,
+      },
+      {
+        title: 'Un bon repas',
+        description: 'Mmmh que c\'est bon !',
+        imageUrl: 'https://wtop.com/wp-content/uploads/2020/06/HEALTHYFRESH.jpg',
+        createDate: new Date(),
+        snaps: 0
+      }
+    ]
   }
+
 }
