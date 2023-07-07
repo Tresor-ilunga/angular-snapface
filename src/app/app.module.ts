@@ -5,11 +5,15 @@ import * as fr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { FaceSnapComponent } from './face-snap/face-snap.component';
+import { SnapFaceListComponent } from './snap-face-list/snap-face-list.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FaceSnapComponent
+    FaceSnapComponent,
+    SnapFaceListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
