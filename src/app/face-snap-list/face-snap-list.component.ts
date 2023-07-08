@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {FaceSnap} from "../models/face-snap.models";
+import { FaceSnap } from "../models/face-snap.models";
 
 @Component({
   selector: 'app-face-snap-list',
   templateUrl: './face-snap-list.component.html',
   styleUrls: ['./face-snap-list.component.scss']
 })
-export class FaceSnapListComponent {
+export class FaceSnapListComponent implements OnInit {
 
   faceSnaps!: FaceSnap[];
 
   constructor() {}
 
-  ngOnInit() {
-    this.faceSnaps = [
+  ngOnInit(): void {
+      this.faceSnaps = [
       {
         title: 'My First Snap',
         description: 'This is my first snap',
@@ -38,5 +38,4 @@ export class FaceSnapListComponent {
       }
     ]
   }
-
 }

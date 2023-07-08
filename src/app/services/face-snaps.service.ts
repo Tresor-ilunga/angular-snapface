@@ -28,5 +28,8 @@ export class FaceSnapsService {
       createDate: new Date(),
       snaps: 50
     }
-  ]
+  ];
+    getAllFaceSnaps(): FaceSnap[] {
+      return this.faceSnaps;
+    }
 }
