@@ -77,4 +77,14 @@ export class FaceSnapsService {
     const faceSnap = this.getFaceSnapById(faceSnapId);
     snapType === 'snap' ? faceSnap.snaps++ : faceSnap.snaps--;
   }
+
+  addFaceSnap(formValues: { title: string, description: string, imageUrl: string, location?: string }): void {
+    const faceSnap: FaceSnap = {
+      ...formValues,
+      createdDate: new Date(),
+      snaps: 0,
+      id: this.faceSnaps[this.faceSnaps.length - 1].id + 1
+    };
+    this.faceSnaps.push(faceSnap);
+  }
 }
