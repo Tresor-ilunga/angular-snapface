@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Observable} from "rxjs";
 import {FaceSnap} from "../models/face-snap.model";
-import {map} from "rxjs/operators";
+import {map, tap} from "rxjs/operators";
 import {FaceSnapsService} from "../services/face-snaps.service";
 import {Router} from "@angular/router";
 
@@ -40,7 +40,8 @@ export class NewFaceSnapComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    this.faceSnapsService.addFaceSnap(this.snapForm.value);
-    this.router.navigateByUrl('/face-snaps');
+    this.faceSnapsService.addFaceSnap(this.snapForm.value).pipe(
+      tap(() => this.router.navigateByUrl('/face-snaps'))
+    ).subscribe();
   }
 }
